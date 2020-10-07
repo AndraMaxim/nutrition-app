@@ -1,18 +1,21 @@
 import React from 'react';
-import Header from './elements/Header';
-import HeroImage from './elements/HeroImage';
-import SearchBar from './elements/SearchBar';
+import Home from './Home';
+import Food from './Food';
+import Bmi from './Bmi';
+import { Router } from '@reach/router';
 
 import { GlobalStyle } from './styles/GlobalStyle';
 
 
 const App = () => (
-      <>
-          <Header />
-          <HeroImage />
-          <SearchBar />
-          <GlobalStyle />
-      </>
+        <>
+            <Router>
+                <Home path="/" />
+                    <Bmi path="/components/Bmi" />
+                    <Food path="/components/Food" />
+            </Router>
+            <GlobalStyle />
+        </>
 );
 
 export default App;
