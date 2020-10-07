@@ -1,21 +1,22 @@
 import styled from 'styled-components';
-import HeroBackground from '../images/amoon-ra-MU045NDK29U-unsplash.jpg';
+import HomeBackground from '../images/home-background.jpg';
 
-export const StyledHeroImage = styled.div`
-    background-image: url(${HeroBackground});
+export const StyledHomeImage = styled.div`
+    background-image: url(${HomeBackground});
     background-repeat: no-repeat;
     background-size: 100%, cover !important;
     background-position: center;
     width: 100%;
+    height: 500px;
     min-width: 300px;
     position: relative;
 
-    .heroimage-content {
+    .homeimage-content {
         padding: 20px;
         margin: 0 auto;
     }
 
-    .heroimage-text {
+    .homeimage-text {
         max-width: 700px;
         bottom: 40px;
         margin-right: 20px;
