@@ -11,11 +11,12 @@ import {
 
 
 const SearchBar = () => {
-    const API_KEY = 'p0tsWh3OGTV39l98NIRZLzJhQmGRsy06OfQhOsbC';
+    const APP_ID = '0edd9e6d';
+    const APP_KEY = 'c22fa1fe261e0d27b053f3734253b12f';
     
     const [ search, setSearch ] = useState("");
     const [ recipes, setRecipes] = useState([]);
-    const [ query, setQuery] = useState('Banana');
+    const [ query, setQuery] = useState('');
 
     useEffect(() => {
         getRecipes();
@@ -23,12 +24,12 @@ const SearchBar = () => {
     
     const getRecipes = async () => {
         const response = await fetch(
-            `https://api.nal.usda.gov/fdc/v1/foods/search?api_key=${API_KEY}&query=${query}`
+            `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`
             );
     
             const data = await response.json();
-            setRecipes(data.foods);
-            console.log(data.foods);
+            setRecipes(data.hits);
+            console.log(data.hits);
     };
 
     const doSearch = event => {
@@ -64,10 +65,15 @@ const SearchBar = () => {
                 <Grid>
                     {recipes.map(recipe => (
                         <Recipe
-                        key={recipe.fdcId}
-                        title={recipe.description}
-                        ingredients={recipe.ingredients}
-                        nutrients={recipe.foodNutrients}
+                        key={recipe.recipe.uri}
+                        title={recipe.recipe.label}
+                        calories={parseInt(recipe.recipe.calories)}
+                        image={recipe.recipe.image}
+                        ingredients={recipe.recipe.ingredients}
+                        carbs={parseInt(recipe.recipe.totalNutrients.CHOCDF.quantity)}
+                        fat={parseInt(recipe.recipe.totalNutrients.FAT.quantity)}
+                        protein={parseInt(recipe.recipe.totalNutrients.PROCNT.quantity)}
+                        fiber={parseInt(recipe.recipe.totalNutrients.FIBTG.quantity)}
                         />
                     ))}
                 </Grid>
