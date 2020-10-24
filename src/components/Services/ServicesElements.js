@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const ServicesContainer = styled.div`
   height: 800px;
@@ -34,6 +35,11 @@ export const ServicesWrapper = styled.div`
     grid-template-columns: 1fr;
     padding: 0 20px;
   }
+`;
+
+export const ServiceLink = styled(Link)`
+  text-decoration: none;
+  color: #010606;
 `;
 
 export const ServicesCard = styled.div`

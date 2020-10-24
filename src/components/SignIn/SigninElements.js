@@ -29,17 +29,13 @@ export const FormWrap = styled.div`
 `;
 
 export const Icon = styled(Link)`
-  margin-left: 32px;
-  margin-top: 32px;
+  margin: 0 auto;
+  left: 200px;
   text-decoration: none;
-  color: #09ba00;
-  font-family: 'Oxygen', sans-serif;
-  font-size: 32px;
-
-  @media screen and (max-width: 480px) {
-    margin-left: 16px;
-    margin-top: 8px;
-  }
+  color: #ffff;
+  font-size: 35px;
+  position: relative;
+  cursor: pointer;
 `;
 
 export const FormContent = styled.div`
@@ -84,21 +80,35 @@ export const FormLabel = styled.label`
   color: #fff;
 `;
 export const FormInput = styled.input`
-  padding: 16px 16px;
+  padding: 10px 10px;
   margin-bottom: 32px;
   border: none;
   border-radius: 4px;
 `;
 
+export const FormLink = styled(Link)`
+    text-decoration: none;
+    color: #010606;
+`;
+
 export const FormButton = styled.button`
   background: #09ba00;
-  padding: 16px 0;
+  padding: 10px 0;
   border: none;
   border-radius: 4px;
-  color: #fff;
-  font-size: 20px;
+  color: #010606;
+  font-size: 18px;
+  margin-top: 15px;
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    background: #0ceb00;
+}
 `;
+
+
 export const Text = styled.span`
   text-align: center;
   margin-top: 24px;

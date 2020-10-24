@@ -1,6 +1,6 @@
 export const homeObjOne = {
   id: 'about',
-  to: '/',
+  to: '/signin',
   lightBg: false,
   lightText: true,
   lightTextDesc: true,
@@ -37,12 +37,12 @@ export const homeObjTwo = {
 };
 
 export const homeObjThree = {
-  id: 'signup',
-  to: '/search',
+  id: 'profile',
+  to: '/signin',
   lightBg: true,
   lightText: false,
   lightTextDesc: false,
-  topLine: 'Join our Comunity',
+  topLine: 'Create your profile',
   headline: 'Creating an account is extremely easy',
   description:
     "Get everything set up and ready in under 10 minutes. All you need to do is add your information and you're ready to go.",
