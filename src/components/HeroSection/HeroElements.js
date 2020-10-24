@@ -94,6 +94,7 @@ export const HeroP = styled.p`
     font-size: 18px;
   }
 `;
+
 export const HeroBtnWrapper = styled.div`
   margin-top: 32px;
   display: flex;

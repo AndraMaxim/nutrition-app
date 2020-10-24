@@ -24,7 +24,7 @@ const SearchBar = () => {
     
     const getRecipes = async () => {
         const response = await fetch(
-            `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`
+            `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&from=0&to=6`
             );
     
             const data = await response.json();
@@ -65,7 +65,8 @@ const SearchBar = () => {
                     <Grid>
                         {recipes.map(recipe => (
                             <Recipe
-                            key={recipe.recipe.uri}
+                            key={recipe.recipe.label}
+                            uri={recipe.recipe.uri}
                             title={recipe.recipe.label}
                             calories={parseInt(recipe.recipe.calories)}
                             image={recipe.recipe.image}
@@ -77,6 +78,7 @@ const SearchBar = () => {
                             />
                         ))}
                     </Grid>
+                    
             </div>
         </>
         );

@@ -1,22 +1,26 @@
 import styled from 'styled-components';
 
 export const StyledGrid = styled.div`
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    margin: 0 auto;
-    padding: 0 20px;
+    align-items: center;
+    background: #010606;
 `;
 
 export const StyledGridContent = styled.div`
+    // max-width: 1000px;
+    margin: 16px;
     display: grid;
-    grid-template-columns: repeat(3, minmax(300px, 1fr));
-    grid-gap: 10px;
-    position: relative;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 16px;
 
-    @media screen and (max-width: 1024px) {
-        grid-template-columns: repeat(2, minmax(300px, 1fr));
+    @media screen and (max-width: 1000px) {
+    grid-template-columns: 1fr 1fr;
     }
 
     @media screen and (max-width: 768px) {
-        grid-template-columns: repeat(1, minmax(300px, 1fr));
+    grid-template-columns: 1fr;
+    padding: 0 20px;
     }
 `;

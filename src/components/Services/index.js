@@ -9,7 +9,8 @@ import {
   ServicesCard,
   ServicesIcon,
   ServicesH2,
-  ServicesP
+  ServicesP,
+  ServiceLink
 } from './ServicesElements';
 
 const Services = () => {
@@ -17,13 +18,16 @@ const Services = () => {
     <ServicesContainer id='services'>
       <ServicesH1>Our Services</ServicesH1>
       <ServicesWrapper>
-        <ServicesCard>
-          <ServicesIcon src={Icon1} />
-          <ServicesH2>For Individuals</ServicesH2>
-          <ServicesP>
-            Good for setting goals and logging daily workouts.
-          </ServicesP>
-        </ServicesCard>
+        <ServiceLink to='/signin'>
+          <ServicesCard>
+            <ServicesIcon src={Icon1} />
+            <ServicesH2>For Individuals</ServicesH2>
+            <ServicesP>
+              Good for setting goals and logging daily workouts.
+            </ServicesP>
+          </ServicesCard>
+        </ServiceLink>
+        <ServiceLink to='/signin'>
         <ServicesCard>
           <ServicesIcon src={Icon2} />
           <ServicesH2>For Professionals</ServicesH2>
@@ -31,6 +35,8 @@ const Services = () => {
             Best for coaches. Unlimited Basic athletes profiles
           </ServicesP>
         </ServicesCard>
+        </ServiceLink>
+        <ServiceLink to='/signin'>
         <ServicesCard>
           <ServicesIcon src={Icon3} />
           <ServicesH2>Premium Benefits</ServicesH2>
@@ -38,6 +44,7 @@ const Services = () => {
             Best for analyzing workouts and tracking fitness.
           </ServicesP>
         </ServicesCard>
+        </ServiceLink>
       </ServicesWrapper>
     </ServicesContainer>
   );

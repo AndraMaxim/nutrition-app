@@ -55,7 +55,7 @@ const InfoSection = ({
                     dark={dark ? 1 : 0}
                     dark2={dark2 ? 1 : 0}
                   >
-                    <Link to={to}> {buttonLabel} </Link>
+                      <Link to={to}> {buttonLabel} </Link>
                   </Button>
                 </BtnWrap>
               </TextWrapper>

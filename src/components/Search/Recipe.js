@@ -1,28 +1,31 @@
 import React from 'react';
-import { StyledRecipe } from './StyledRecipe';
+import { StyledRecipe, RecipeContent, RecipeBtn, RecipeBtnLink, DetailsLink } from './StyledRecipe';
 
-const Recipe = ({title,calories,image,ingredients,carbs,fat,protein,fiber}) => {
+const Recipe = ({uri,title,calories,image,ingredients,carbs,fat,protein,fiber}) => {
     return (
-        <div className="recipe-container">
-            <StyledRecipe>
-                    <div className="nutrients-table">
-                        <div className="nutrients-header">
-                            <h3>{title}</h3>
-                            <h6>Carbs: {carbs} | Fat: {fat} | Protein: {protein} | Fiber: {fiber}  </h6>
-                            <h5>{calories} Kcal</h5>
-                            <img src={image} alt="" />
-                            <ul className="ingredient-name">
-                                {ingredients.map(ingredients => (
-                                    <li>{ingredients.text}</li>
-                                ))}
-                            </ul>
-                        </div>
-                    </div>
-                    <button className="recipe-button" type="submit">
-                        Add to menu
-                    </button>
-            </StyledRecipe>
-        </div>
+        <>
+                <StyledRecipe>
+                    <DetailsLink to={`/search/${uri}`}>
+                        <RecipeContent>
+                            <div className="recipe-info">
+                                <h1>{title}</h1>
+                                <p>Carbs: {carbs}g  |  Fat: {fat}g  |  Protein: {protein}g  |  Fiber: {fiber}g  </p>
+                                <h2>{calories} Kcal</h2>
+                                <img src={image} alt="recipe" />
+                                <ul className="ingredient-name" >
+                                    {ingredients.map(ingredients => (
+                                        <li>{ingredients.text}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </RecipeContent>
+                    </DetailsLink>
+                        <RecipeBtn>
+                            <RecipeBtnLink to='/'>Add to menu</RecipeBtnLink>
+                        </RecipeBtn>
+                </StyledRecipe>
+                
+        </>
     );
 };
 
