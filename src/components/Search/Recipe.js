@@ -21,7 +21,7 @@ const Recipe = ({uri,title,calories,image,ingredients,carbs,fat,protein,fiber}) 
                         </RecipeContent>
                     </DetailsLink>
                         <RecipeBtn>
-                            <RecipeBtnLink to='/'>Add to menu</RecipeBtnLink>
+                            <RecipeBtnLink to='/search'>Add to menu</RecipeBtnLink>
                         </RecipeBtn>
                 </StyledRecipe>
                 

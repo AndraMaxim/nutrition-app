@@ -2,18 +2,19 @@ import React, { useState, useEffect } from 'react';
 import { FaBars } from 'react-icons/fa';
 import { IconContext } from 'react-icons/lib';
 import { animateScroll as scroll } from 'react-scroll';
-import Logo from '../../images/pngaaa.com-1767786.png';
-import { Link } from 'react-router-dom';
+// import Logo from '../../images/pngaaa.com-1767786.png';
+// import { Link } from 'react-router-dom';
 import {
   MobileIcon,
   Nav,
   NavbarContainer,
   NavItem,
   NavLinks,
-  NavLogo,
+  Logo,
   NavMenu,
   NavBtn,
-  NavBtnLink
+  NavBtnLink,
+  Text
 } from './NavbarElements';
 
 const Navbar = ({ toggle }) => {
@@ -40,9 +41,10 @@ const Navbar = ({ toggle }) => {
       <IconContext.Provider value={{ color: '#fff' }}>
         <Nav scrollNav={scrollNav}>
           <NavbarContainer>
-            <Link to="/" onClick={toggleHome} >
-                <NavLogo src={Logo} alt="NutritionApp-logo" />
-            </Link>
+            <Logo to="/" onClick={toggleHome} >
+              Lime
+                {/* <NavLogo src={Logo} alt="NutritionApp-logo" /> */}
+            </Logo>
             <MobileIcon onClick={toggle}>
               <FaBars />
             </MobileIcon>
@@ -97,6 +99,8 @@ const Navbar = ({ toggle }) => {
               </NavItem>
             </NavMenu>
             <NavBtn>
+              <NavBtnLink to='/signup'>Sign Up</NavBtnLink>
+              <Text>/</Text>
               <NavBtnLink to='/signin'>Sign In</NavBtnLink>
             </NavBtn>
           </NavbarContainer>

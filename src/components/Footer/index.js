@@ -17,7 +17,7 @@ import {
   FooterLink,
   SocialMedia,
   SocialMediaWrap,
-  SocialLogo,
+  SmallLogo,
   WebsiteRights,
   SocialIcons,
   SocialIconLink
@@ -66,9 +66,9 @@ const Footer = () => {
         </FooterLinksContainer>
         <SocialMedia>
           <SocialMediaWrap>
-            <SocialLogo to='/' onClick={toggleHome}>
-              lime
-            </SocialLogo>
+            <SmallLogo to='/' onClick={toggleHome}>
+              Lime
+            </SmallLogo>
             <WebsiteRights>Copyright © 2020 All rights reserved.</WebsiteRights>
             <SocialIcons>
               <SocialIconLink 

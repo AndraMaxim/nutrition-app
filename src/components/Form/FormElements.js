@@ -4,16 +4,16 @@ import { Link } from 'react-router-dom';
 
 export const HeroContainer = styled.div`
     background: #0c0c0c;
-    display: flex;
+    // display: flex;
     justify-content: center;
     align-items: center;
     padding: 0 30px;
     height: 100vh;
-    position: relative;
+    // position: relative;
     z-index: 1;
 
     :before {
-        content: '';
+        // content: '';
         // position: absolute;
         top: 0;
         left: 0;
@@ -37,17 +37,38 @@ export const HeroContainer = styled.div`
     }
 `;
 
-export const NavLogo = styled.img`
-    width: 100px;
-    position: relative;
-    top: -12px;
-    left: 10px;
-    justify-self: flex-start;
-    cursor: pointer;
+export const HeroContent = styled.div`
+    z-index: 3;
+    position: absolute;
+    padding: 8px 24px;
     display: flex;
-    margin: 20px 0 0 5px;
-    text-decoration: none;
+    flex-direction: column;
+    align-items: center;
 `;
+
+export const Logo = styled(Link)`
+    color: #09ba00;
+    justify-self: start;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    font-family: 'Pacifico', cursive;
+`;
+
+// export const NavLogo = styled.img`
+//     width: 100px;
+//     position: fixed;
+//     top: -12px;
+//     left: 10px;
+//     justify-self: flex-start;
+//     cursor: pointer;
+//     display: flex;
+//     margin: 20px 0 0 5px;
+//     text-decoration: none;
+// `;
 
 export const HeroBg = styled.div`
     position: absolute;
@@ -68,15 +89,6 @@ export const VideoBg = styled.video`
     background: #232a34;
 `;
 
-export const HeroContent = styled.div`
-    z-index: 3;
-    position: absolute;
-    padding: 8px 24px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-`;
-
 export const HeroP = styled.p`
     margin: 0 auto;
     position: fixed;
@@ -89,10 +101,10 @@ export const HeroP = styled.p`
 export const Container = styled.div`
     min-height: 692px;
     position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    top: 0;
+    bottom: 40px;
+    left: 40px;
+    right: 40px;
+    top: 50px;
     z-index: 0;
     overflow: hidden;
     // background-color: yellow;

@@ -83,7 +83,7 @@ export const SocialMediaWrap = styled.div`
   }
 `;
 
-export const SocialLogo = styled(Link)`
+export const SmallLogo = styled(Link)`
   color: #09ba00;
   justify-self: start;
   cursor: pointer;
@@ -92,7 +92,7 @@ export const SocialLogo = styled(Link)`
   display: flex;
   align-items: center;
   margin-bottom: 16px;
-  font-family: 'Oxygen', sans-serif;
+  font-family: 'Pacifico', cursive;
 `;
 
 export const WebsiteRights = styled.small`

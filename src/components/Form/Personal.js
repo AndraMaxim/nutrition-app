@@ -8,6 +8,7 @@ import {
     FormLabel,
     FormInput,
     FormButtonNext,
+    FormSelect
 } from './FormElements';
 
 class Personal extends Component{
@@ -17,7 +18,7 @@ class Personal extends Component{
     }
 
     render(){
-        const { firstName, lastName, handleChange } = this.props;
+        const { firstName, lastName, status, handleChange } = this.props;
         return(
             <>
             <Container>
@@ -43,6 +44,12 @@ class Personal extends Component{
                                     onChange={handleChange('lastName')}
                                     required
                                 />
+                            <FormSelect 
+                                value={status} 
+                                onChange={handleChange('status')}>
+                                    <option defaultValue="Professional">Professional</option>
+                                    <option value="Individual">Individual</option>
+                            </FormSelect>
                             <FormButtonNext type='submit' className="Next" onClick={this.continue}>
                                 Next »
                             </FormButtonNext>
