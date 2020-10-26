@@ -125,6 +125,6 @@ export const NavBtnLink = styled(LinkR)`
 `;
 
 export const Text = styled.p`
-  color: #09ba00;
+  color: #ffff;
   font-size: 18px;
 `;

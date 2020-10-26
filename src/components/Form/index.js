@@ -5,12 +5,12 @@ import Biometrics from './Biometrics';
 import Activity from './Activity';
 import Goal from './Goal';
 import AllInfo from './AllInfo';
-import Logo from '../../images/pngaaa.com-1767786.png';
-import { Link } from 'react-router-dom';
+// import Logo from '../../images/pngaaa.com-1767786.png';
+// import { Link } from 'react-router-dom';
 import Video from '../../videos/video.mp4';
 import {
     HeroContainer,
-    NavLogo,
+    Logo,
     HeroBg,
     HeroContent,
     VideoBg,
@@ -25,6 +25,7 @@ export class StepForm extends Component {
         // step 1
         firstName: '',
         lastName: '',
+        status: '',
 
         // step 2
         gender: '',
@@ -34,6 +35,7 @@ export class StepForm extends Component {
         height: '',
         weight: '',
         bmi: '',
+        bmiClass: '',
 
         // step 4
         activity: '',
@@ -62,7 +64,7 @@ export class StepForm extends Component {
     }
 
     showStep = () => {
-        const { step, gender, firstName, lastName, age, height, weight, activity, goal } = this.state;
+        const { step, gender, firstName, lastName, status, age, height, weight, activity, goal, bmi, bmiClass } = this.state;
 
         if(step === 1)
             return (<Personal 
@@ -70,6 +72,7 @@ export class StepForm extends Component {
                 handleChange = {this.handleChange} 
                 firstName={firstName} 
                 lastName={lastName}
+                status={status}
             />);
         if(step === 2)
             return (<Gender 
@@ -80,13 +83,15 @@ export class StepForm extends Component {
             />);
         if(step === 3)
             return (<Biometrics
-                nextStep = {this.nextStep} 
-                prevStep = {this.prevStep}
-                handleChange = {this.handleChange} 
-                age={age} 
-                height={height}
-                weight={weight}
-            />);
+                    nextStep = {this.nextStep} 
+                    prevStep = {this.prevStep}
+                    handleChange = {this.handleChange} 
+                    age={age} 
+                    height={height}
+                    weight={weight}
+                    bmi={bmi}
+                    bmiClass={bmiClass}
+                />);
         if(step === 4)
             return (<Activity
                 nextStep = {this.nextStep} 
@@ -105,13 +110,14 @@ export class StepForm extends Component {
             return (<AllInfo 
                 firstName={firstName} 
                 lastName={lastName}
+                status={status}
                 gender={gender} 
                 age={age} 
                 height={height}
                 weight={weight}
                 activity={activity}
                 goal={goal}
-                bmi={Math.round((weight/(height*height*0.0001)))}
+                bmi={Math.round(weight/(height*height*0.0001))}
                 whater={Math.round(((0.033*weight)+Number.EPSILON)*10)/10}
                 kcal={Math.round((10*weight+6.25*height-5*age-161))}
                 prevStep = {this.prevStep}
@@ -124,18 +130,19 @@ export class StepForm extends Component {
 
         return(
             <>
-            <HeroContent>
-                <HeroP>Step {step} of 6</HeroP>
-                {this.showStep()}
-            </HeroContent>
+            
             <HeroContainer id='food'>
                 <HeroBg>
-                <Link to="/food" >
-                    <NavLogo src={Logo} alt="NutritionApp-logo" />
-                </Link>
                     <VideoBg autoPlay loop muted src={Video} type='video/mp4' />
-
                 </HeroBg>
+                <HeroContent>
+                    <Logo to="/profile" >
+                        Lime
+                        {/* <NavLogo src={Logo} alt="NutritionApp-logo" /> */}
+                    </Logo>
+                    <HeroP>Step {step} of 6</HeroP>
+                    {this.showStep()}
+                </HeroContent>
             </HeroContainer>
             </>
         );

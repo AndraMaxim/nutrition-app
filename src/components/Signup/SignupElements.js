@@ -31,6 +31,7 @@ export const FormWrap = styled.div`
 export const Icon = styled(Link)`
   margin: 0 auto;
   left: 200px;
+  top: 30px;
   text-decoration: none;
   color: #ffff;
   font-size: 35px;
@@ -91,7 +92,7 @@ export const FormLink = styled(Link)`
     color: #010606;
 `;
 
-export const SignupLink = styled(Link)`
+export const SigninLink = styled(Link)`
     color: #ffff;
 
     &:hover {
@@ -100,26 +101,26 @@ export const SignupLink = styled(Link)`
 `;
 
 export const FormButton = styled.button`
-  background: #09ba00;
-  padding: 10px 0;
-  border: none;
-  border-radius: 4px;
-  color: #010606;
-  font-size: 18px;
-  margin-top: 15px;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-
-  &:hover {
+    background: #09ba00;
+    padding: 10px 0;
+    border: none;
+    border-radius: 4px;
+    color: #010606;
+    font-size: 18px;
+    margin-top: 15px;
+    cursor: pointer;
     transition: all 0.2s ease-in-out;
-    background: #0ceb00;
+
+    &:hover {
+        transition: all 0.2s ease-in-out;
+        background: #0ceb00;
 }
 `;
 
 
 export const Text = styled.span`
-  text-align: center;
-  margin-top: 24px;
-  color: #fff;
-  font-size: 14px;
+    text-align: center;
+    margin-top: 24px;
+    color: #fff;
+    font-size: 14px;
 `;

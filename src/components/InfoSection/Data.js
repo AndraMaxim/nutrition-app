@@ -38,7 +38,7 @@ export const homeObjTwo = {
 
 export const homeObjThree = {
   id: 'profile',
-  to: '/signin',
+  to: '/form',
   lightBg: true,
   lightText: false,
   lightTextDesc: false,
