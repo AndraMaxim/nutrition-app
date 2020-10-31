@@ -1,7 +1,6 @@
 import React, { useRef, useState } from 'react';
-import { Alert } from 'react-bootstrap';
 import { useAuth } from '../../contexts/AuthContext';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import {
   Container,
   FormWrap,
@@ -13,8 +12,9 @@ import {
   FormInput,
   FormButton,
   Text,
+  TextError,
   FormLink,
-  SignupLink
+  SignupLink,
 } from './SigninElements';
 
 const SignIn = () => {
@@ -47,22 +47,19 @@ const SignIn = () => {
         <FormWrap>
           <FormContent>
             <Icon to='/'>X</Icon>
-            {error && <Alert variant="danger">{error}</Alert>}
             <Form onSubmit={handleSubmit}>
-            
               <FormH1>Sign in to your account</FormH1>
+              {error && <TextError>{error}</TextError>}
               <FormLabel htmlFor='for'>Email</FormLabel>
               <FormInput type='email' ref={emailRef} required />
               <FormLabel htmlFor='for'>Password</FormLabel>
               <FormInput type='password' ref={passwordRef} required />
-              
                 <FormButton disabled={loading} type='submit'>
                   <FormLink to='/profile'>
                     Sign In
                   </FormLink>
                 </FormButton>
-              
-              <Text><SignupLink to="/signin">Forgot Password?</SignupLink></Text>
+              <Text><SignupLink to="/forgot-pass">Forgot Password?</SignupLink></Text>
               <Text>Need an account? <SignupLink to="/signup">Sign Up</SignupLink></Text>
             </Form>
           </FormContent>

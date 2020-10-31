@@ -8,7 +8,6 @@ import {
     ServicesIcon,
     ServicesH2,
     ServicesP,
-    ServiceLink,
     RecipeBtn,
     RecipeBtnLink
 } from './ProfileElements';
@@ -24,7 +23,7 @@ const Profile = () => {
                 All you need to do is add or update your information and you're ready to go.
                 </ServicesP>
                 <RecipeBtn>
-                    <RecipeBtnLink to='/form'>Update</RecipeBtnLink>
+                    <RecipeBtnLink to='/update-profile'>Update</RecipeBtnLink>
                 </RecipeBtn>
             </ServicesCard>
             <ServicesCard>

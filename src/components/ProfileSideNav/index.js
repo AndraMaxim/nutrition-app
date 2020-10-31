@@ -8,7 +8,6 @@ import {
     Nav,
     NavLinkBars,
     NavMenu,
-    NavText,
     NavItems,
     NavToggle,
     NavSpan

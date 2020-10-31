@@ -12,6 +12,11 @@ import {
 } from './FormElements';
 
 class AllInfo extends Component {
+    continue = e => {
+        e.preventDefault();
+        this.props.nextStep();
+    }
+
     back = e => {
         e.preventDefault();
         this.props.prevStep();
@@ -40,6 +45,9 @@ class AllInfo extends Component {
                                 <br />
                                 <br />
                                 </Text>
+                                <FormButtonNext type='submit' className="Next" onClick={this.continue}>
+                                    Next »
+                                </FormButtonNext>
                                 <FormButtonNext>
                                     <FormBtnLink to='/profile'>Done</FormBtnLink>
                                 </FormButtonNext>

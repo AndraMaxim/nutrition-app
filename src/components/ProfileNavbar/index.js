@@ -10,10 +10,7 @@ import {
   MobileIcon,
   Nav,
   NavbarContainer,
-  NavItem,
-  NavLinks,
   Logo,
-  NavMenu,
   NavBtn,
   Text,
   NavBtnLink
@@ -29,7 +26,7 @@ const ProfileNavbar = () => {
 
         try {
             await logout()
-            history.push("/signin")
+            history.push("/")
         } catch {
             setError("Failed to log out")
         }

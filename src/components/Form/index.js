@@ -5,8 +5,6 @@ import Biometrics from './Biometrics';
 import Activity from './Activity';
 import Goal from './Goal';
 import AllInfo from './AllInfo';
-// import Logo from '../../images/pngaaa.com-1767786.png';
-// import { Link } from 'react-router-dom';
 import Video from '../../videos/video.mp4';
 import {
     HeroContainer,
@@ -34,8 +32,8 @@ export class StepForm extends Component {
         age: '', 
         height: '',
         weight: '',
-        bmi: '',
-        bmiClass: '',
+        // bmi: '',
+        // bmiClass: '',
 
         // step 4
         activity: '',
@@ -64,7 +62,7 @@ export class StepForm extends Component {
     }
 
     showStep = () => {
-        const { step, gender, firstName, lastName, status, age, height, weight, activity, goal, bmi, bmiClass } = this.state;
+        const { step, gender, firstName, lastName, status, age, height, weight, activity, goal } = this.state;
 
         if(step === 1)
             return (<Personal 
@@ -89,8 +87,6 @@ export class StepForm extends Component {
                     age={age} 
                     height={height}
                     weight={weight}
-                    bmi={bmi}
-                    bmiClass={bmiClass}
                 />);
         if(step === 4)
             return (<Activity
@@ -107,7 +103,9 @@ export class StepForm extends Component {
                 goal={goal}
             />);
         if(step === 6)
-            return (<AllInfo 
+            return (<AllInfo
+                nextStep = {this.nextStep} 
+                prevStep = {this.prevStep}
                 firstName={firstName} 
                 lastName={lastName}
                 status={status}
@@ -120,7 +118,6 @@ export class StepForm extends Component {
                 bmi={Math.round(weight/(height*height*0.0001))}
                 whater={Math.round(((0.033*weight)+Number.EPSILON)*10)/10}
                 kcal={Math.round((10*weight+6.25*height-5*age-161))}
-                prevStep = {this.prevStep}
             />);
 
     }
@@ -138,7 +135,6 @@ export class StepForm extends Component {
                 <HeroContent>
                     <Logo to="/profile" >
                         Lime
-                        {/* <NavLogo src={Logo} alt="NutritionApp-logo" /> */}
                     </Logo>
                     <HeroP>Step {step} of 6</HeroP>
                     {this.showStep()}
