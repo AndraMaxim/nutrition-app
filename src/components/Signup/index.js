@@ -1,7 +1,6 @@
-import React, { useRef, useState } from "react";
-import { useAuth } from "../../contexts/AuthContext";
-import { Alert } from "react-bootstrap"
-import { useHistory } from "react-router-dom";
+import React, { useRef, useState } from 'react';
+import { useAuth } from '../../contexts/AuthContext';
+import { useHistory } from 'react-router-dom';
 import {
     Container,
     FormWrap,
@@ -13,6 +12,7 @@ import {
     FormInput,
     FormButton,
     Text,
+    TextError,
     SigninLink
 } from './SignupElements';
 
@@ -36,12 +36,13 @@ const Signup = () => {
             setError("")
             setLoading(true)
             await signup(emailRef.current.value, passwordRef.current.value)
-            history.push("/")
+            history.push("/form")
         } catch {
             setError("Failed to create an account")
         }
 
         setLoading(false)
+
     }
 
     return (
@@ -49,11 +50,10 @@ const Signup = () => {
         <Container>
             <FormWrap>
                 <FormContent>
-                    <Icon to='/'>X</Icon>
-                    <h2 className="text-center mb-4">Sign Up</h2>
-                    {error && <Alert variant="danger">{error}</Alert>}
+                <Icon to='/'>X</Icon>
                     <Form  onSubmit={handleSubmit}>
                         <FormH1>Sign up</FormH1>
+                        {error && <TextError>{error}</TextError>}
                         <FormLabel>Email</FormLabel>
                         <FormInput type="email" ref={emailRef} required />
                         <FormLabel>Password</FormLabel>

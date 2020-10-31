@@ -4,11 +4,7 @@ import {
     FormWrap,
     FormContent,
     Form,
-    FormH1,
-    FormButtonNext,
-    FormBtnLink,
     FormButtonBack,
-    Text
 } from './FormElements';
 
 
@@ -16,8 +12,6 @@ class Bmi extends Component {
         constructor(props) {
         super(props);
         this.state = {
-            height: '',
-            weight: '',
             bmi: '',
             bmiClass: ''
         }
@@ -56,28 +50,34 @@ class Bmi extends Component {
         
         render() {
         return (
-            <div className="App">
-            <Output data={this.state}/>        
-            </div>
+            <>
+                <Container>
+                    <FormWrap>
+                        <FormContent>
+                            <Form>
+                                <Output data={this.state}/>
+                                <FormButtonBack type='submit' className="Back" onClick={this.back}>
+                                    « Back
+                                </FormButtonBack>
+                                </Form>
+                        </FormContent>
+                    </FormWrap>
+                </Container>
+            </>
         );
         }
     }
     
     class Output extends React.Component {
         render() {
-            let height = this.props.data.height;
-            let weight = this.props.data.weight;
             let bmi = this.props.data.bmi;
             let bmiClass = this.props.data.bmiClass;
             return (
                 <div className="output">
-                    <h3>{height}</h3>
-                    <h3>{weight} lbs</h3>
                     <h3>{bmi}</h3>
                     <h3
                         className={(this.props.data.bmiClass === "Obese") ? "danger" : ""}>
                         {bmiClass}
-                        {(this.props.data.bmiClass === "Obese") ? <a href='#'>You need to get some help</a> : ""}
                     </h3>
                 </div>
         );

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { StyledGrid, StyledGridContent } from './StyledGrid'
+import { StyledGrid, StyledGridContent } from './GridElements';
 
 const Grid = ({ children }) => (
     <StyledGrid>

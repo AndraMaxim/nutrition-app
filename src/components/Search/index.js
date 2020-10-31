@@ -7,7 +7,7 @@ import Grid from './Grid';
 import {
     StyledSearchBar,
     StyledSearchBarContent,
-} from './StyledSearchBar';
+} from './SearchBarElements';
 
 
 const SearchBar = () => {

@@ -10,10 +10,9 @@ import SearchPage from './pages/search';
 import ProfilePage from './pages/profile';
 import DetailsPage from './pages/details';
 import FormPage from './pages/form';
+import ForgotPasswordPage from './pages/forgotPassword';
 import PrivateRoute from './components/PrivateRoute';
-// import ForgotPassword from "./ForgotPassword"
-// import UpdateProfile from "./UpdateProfile"
-// import ListPage from './pages/list';
+import UpdateProfilePage from './pages/updateProfile';
 
 function App() {
   return (
@@ -27,7 +26,8 @@ function App() {
           <PrivateRoute path='/search' component={SearchPage} exact />
           <Route path='/search/:id' component={DetailsPage} />
           <PrivateRoute path='/form' component={FormPage} />
-          {/* <Route path='/list' component={ListPage} exact /> */}
+          <Route path='/forgot-pass' component={ForgotPasswordPage} exact />
+          <PrivateRoute path='/update-profile' component={UpdateProfilePage} exact />
         </Switch>
       </AuthProvider>
     </Router>

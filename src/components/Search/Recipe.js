@@ -1,5 +1,11 @@
 import React from 'react';
-import { StyledRecipe, RecipeContent, RecipeBtn, RecipeBtnLink, DetailsLink } from './StyledRecipe';
+import { 
+    StyledRecipe, 
+    RecipeContent, 
+    RecipeBtn, 
+    RecipeBtnLink, 
+    DetailsLink 
+} from './RecipeElements';
 
 const Recipe = ({uri,title,calories,image,ingredients,carbs,fat,protein,fiber}) => {
     return (

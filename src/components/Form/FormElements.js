@@ -93,7 +93,7 @@ export const HeroP = styled.p`
     margin: 0 auto;
     position: fixed;
     left: 44%;
-    top: 2%;
+    top: 4%;
     color: #fff;
     font-size: 18px;
 `;

@@ -29,20 +29,18 @@ export const FormWrap = styled.div`
 `;
 
 export const Icon = styled(Link)`
-  margin: 0 auto;
-  left: 200px;
   text-decoration: none;
   color: #ffff;
   font-size: 35px;
-  position: relative;
   cursor: pointer;
+  float: right;
+  margin-top: -35px;
 `;
 
 export const FormContent = styled.div`
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+  margin: 0 auto;
   justify-content: center;
+  width: 430px;
 
   @media screen and (max-width: 480px) {
     padding: 10px;
@@ -116,10 +114,20 @@ export const FormButton = styled.button`
 }
 `;
 
-
 export const Text = styled.span`
   text-align: center;
   margin-top: 24px;
-  color: #fff;
+  color: #ffff;
   font-size: 14px;
+`;
+
+export const TextError = styled.span`
+    width: 100%;
+    text-align: center;
+    background: #CCB6B6;
+    border-radius: 4px;
+    margin-bottom: 30px;
+    padding: 10px;
+    color: #800000;
+    font-size: 14px;
 `;
